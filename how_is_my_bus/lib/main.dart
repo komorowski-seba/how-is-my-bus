@@ -6,18 +6,18 @@ import 'app/router/app_router.dart';
 void main() {
   runApp(
     const ProviderScope(
-      child: MyApp(),
+      child: HowIsMyBusApp(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class HowIsMyBusApp extends StatelessWidget {
+  const HowIsMyBusApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Clean Architecture',
+      title: 'How is my bus',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,

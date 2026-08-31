@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:how_is_my_bus/core/domain/tracked_bus.dart';
+
+import '../../core/provider/user_tracking_provider.dart';
 
 class UserTrackingMap extends ConsumerWidget {
   final String userId;
@@ -58,5 +62,9 @@ class UserTrackingMap extends ConsumerWidget {
         },
       ),
     );
+  }
+
+  Widget UserLocationMarker({required TrackedBus user}) {
+    return Text('Hallo');
   }
 }

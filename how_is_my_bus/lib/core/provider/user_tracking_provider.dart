@@ -1,13 +1,16 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:how_is_my_bus/core/domain/tracked_bus.dart';
-
 import '../services/tracking_service.dart';
 
-final trackingServiceProvider = Provider<TrackingService>((ref) {
-  return TrackingService();
-});
+part 'user_tracking_provider.g.dart';
 
-final userTrackingProvider = StreamProvider.autoDispose.family<TrackedBus, String>((ref, userId) {
+@riverpod
+TrackingService trackingService(TrackingServiceRef ref) {
+  return TrackingService();
+}
+
+@riverpod
+Stream<TrackedBus> busTracking(BusTrackingRef ref, String busId) {
   final service = ref.watch(trackingServiceProvider);
-  return service.watchUser(userId);
-});
+  return service.watchBus(busId);
+}

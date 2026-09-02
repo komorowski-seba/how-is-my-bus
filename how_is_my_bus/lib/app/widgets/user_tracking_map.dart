@@ -17,7 +17,7 @@ class UserTrackingMap extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userAsync = ref.watch(
-      userTrackingProvider(userId),
+      busTrackingProvider(userId),
     );
 
     return Scaffold(

@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../view/home_page.dart';
-import '../view/settings_page.dart';
+import '../view/map_page.dart';
 
 
 final appRouter = GoRouter(
@@ -15,9 +15,9 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/settings',
+      path: '/${MapPage.pageName}',
       builder: (context, state) {
-        return const SettingsPage();
+        return const MapPage();
       },
     ),
   ],

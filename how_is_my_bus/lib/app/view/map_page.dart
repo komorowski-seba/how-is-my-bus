@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:how_is_my_bus/app/view/page_name.dart';
 import 'package:how_is_my_bus/app/widgets/app_drawer.dart';
 
-class MapPage extends StatelessWidget {
-  static const pageName = 'Map';
+class MapPage extends StatelessWidget implements PageName {
+  static String get pageName => 'Map';
 
   const MapPage({super.key});
 
@@ -10,12 +11,12 @@ class MapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(pageName),
+        title: Text(pageName),
       ),
 
       drawer: const DrawerApp(),
 
-      body: const Center(
+      body: Center(
         child: Text(
           pageName,
           style: TextStyle(fontSize: 28),

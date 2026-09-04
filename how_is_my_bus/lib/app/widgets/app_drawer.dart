@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:how_is_my_bus/app/view/home_page.dart';
 import 'package:how_is_my_bus/app/view/map_page.dart';
 
 class const DrawerApp({super.key}) extends StatelessWidget {
@@ -33,16 +34,16 @@ class const DrawerApp({super.key}) extends StatelessWidget {
             ),
 
             ListTile(
-              selected: location == '/home',
+              selected: location == '/${HomePage.pageName}',
               leading: const Icon(Icons.home),
               title: const Text('home'),
               onTap: () {
-                context.go('/home');
+                context.go('/${HomePage.pageName}');
               },
             ),
 
             ListTile(
-              selected: location == '/settings',
+              selected: location == '/${MapPage.pageName}',
               leading: const Icon(Icons.settings),
               title: const Text('Settings'),
               onTap: () {

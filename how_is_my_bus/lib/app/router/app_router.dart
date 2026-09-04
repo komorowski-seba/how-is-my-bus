@@ -5,10 +5,10 @@ import '../view/map_page.dart';
 
 
 final appRouter = GoRouter(
-  initialLocation: '/home',
+  initialLocation: '/${HomePage.pageName}',
   routes: [
     GoRoute(
-      path: '/home',
+      path: '/${HomePage.pageName}',
       builder: (context, state) {
         return const HomePage();
       },

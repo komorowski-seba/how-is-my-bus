@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:how_is_my_bus/app/view/page_name.dart';
 import 'package:how_is_my_bus/app/widgets/app_drawer.dart';
 
+import '../widgets/user_tracking_map.dart';
+
 class MapPage extends StatelessWidget implements PageName {
   static String get pageName => 'Map';
 
@@ -17,10 +19,7 @@ class MapPage extends StatelessWidget implements PageName {
       drawer: const DrawerApp(),
 
       body: Center(
-        child: Text(
-          pageName,
-          style: TextStyle(fontSize: 28),
-        ),
+        child: UserTrackingMap(userId: '12'),
       ),
     );
   }

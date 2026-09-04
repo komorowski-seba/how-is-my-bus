@@ -3,7 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:how_is_my_bus/app/view/home_page.dart';
 import 'package:how_is_my_bus/app/view/map_page.dart';
 
-class const DrawerApp({super.key}) extends StatelessWidget {
+class DrawerApp extends StatelessWidget {
+  const DrawerApp({super.key});
 
   @override
   Widget build(BuildContext context) {

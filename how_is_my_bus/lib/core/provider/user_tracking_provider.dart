@@ -5,6 +5,11 @@ import '../services/tracking_service.dart';
 part 'user_tracking_provider.g.dart';
 
 @riverpod
+GoRouter appRouter(AppRouterRef ref) {
+  return GoRouter(...);
+}
+
+@riverpod
 TrackingService trackingService(TrackingServiceRef ref) {
   return TrackingService();
 }

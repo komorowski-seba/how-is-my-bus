@@ -28,9 +28,11 @@ class UserTrackingMap extends ConsumerWidget {
         loading: () => const Center(
           child: CircularProgressIndicator(),
         ),
+
         error: (error, stack) => Center(
           child: Text('Błąd: $error'),
         ),
+
         data: (user) {
           return FlutterMap(
             options: MapOptions(

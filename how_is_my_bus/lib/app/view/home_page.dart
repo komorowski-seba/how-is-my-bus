@@ -17,11 +17,15 @@ class HomePage extends StatelessWidget implements PageName {
 
       drawer: const DrawerApp(),
 
-      body: Center(
-        child: Text(
-          pageName,
-          style: TextStyle(fontSize: 28),
-        ),
+      body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (c, i) {
+            final number = 100 + i;
+            return ListTile(
+              leading: const CircleAvatar(child: Icon(Icons.directions_bus),),
+              title: Text('Bus $number'),
+            );
+          }
       ),
     );
   }

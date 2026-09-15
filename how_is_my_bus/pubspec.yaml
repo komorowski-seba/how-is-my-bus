@@ -42,6 +42,7 @@ dependencies:
   latlong2: ^0.10.1
   sqflite: ^3.3.0
   path: ^1.9.1
+  gtfs_realtime_bindings: ^1.0.0
 
 dev_dependencies:
   flutter_test:

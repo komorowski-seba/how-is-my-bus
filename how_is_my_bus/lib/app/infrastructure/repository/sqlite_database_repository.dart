@@ -1,11 +1,13 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+import '../../../core/interfaces/database_interface.dart';
+
 class SqliteDatabaseRepository implements DatabaseInterface {
-  static final DatabaseHelper instance = DatabaseHelper._init();
+  static final SqliteDatabaseRepository instance = SqliteDatabaseRepository._init();
   static Database? _database;
 
-  DatabaseHelper._init();
+  SqliteDatabaseRepository._init();
 
   Future<Database> get database async {
     if (_database != null) return _database!;
@@ -20,7 +22,7 @@ class SqliteDatabaseRepository implements DatabaseInterface {
     return await openDatabase(
       path,
       version: 1,
-      onCreate: _createDB,
+      onCreate: _createDB
     );
   }
 
@@ -35,22 +37,23 @@ class SqliteDatabaseRepository implements DatabaseInterface {
     ''');
   }
 
-  // Example: Insert Data
-  Future<int> insertBus(Map<String, dynamic> row) async {
-    final db = await instance.database;
-    return await db.insert('buses', row);
-  }
-
-  // Example: Query Data
-  Future<List<Map<String, dynamic>>> queryAllBuses() async {
-    final db = await instance.database;
-    return await db.query('buses');
-  }
-
-  Future<void> close() async {
-    final db = await _database;
-    if (db != null) {
-      await db.close();
-    }
-  }
+  //
+  // // Example: Insert Data
+  // Future<int> insertBus(Map<String, dynamic> row) async {
+  //   final db = await instance.database;
+  //   return await db.insert('buses', row);
+  // }
+  //
+  // // Example: Query Data
+  // Future<List<Map<String, dynamic>>> queryAllBuses() async {
+  //   final db = await instance.database;
+  //   return await db.query('buses');
+  // }
+  //
+  // Future<void> close() async {
+  //   final db = await _database;
+  //   if (db != null) {
+  //     await db.close();
+  //   }
+  // }
 }
